@@ -14,7 +14,6 @@ namespace FirstAndThird\Dandy;
 class Dandy_Blocks {
   static $plugin_path = '';
   static $theme_path = '';
-  static $options = [];
   static $theme_options = [];
   static $category = 'dandy-blocks';
   static $theme_category = 'custom-blocks';
@@ -24,10 +23,6 @@ class Dandy_Blocks {
   static function init() {
     self::$plugin_path = plugin_dir_path(__FILE__);
     self::$theme_path = get_stylesheet_directory();
-
-    $config = file_get_contents(self::$plugin_path . 'config.json');
-
-    self::$options = json_decode($config, true);
 
     if (file_exists(self::$theme_path . '/blocks.json')) {
       $theme_config = file_get_contents(self::$theme_path . '/blocks.json');
@@ -79,35 +74,15 @@ class Dandy_Blocks {
   }
 
   static function register_blocks() {
-    if (!isset(self::$options['blocks'])) {
-      self::log('Dandy Blocks has incorrect configuration.');
-      return;
-    }
-
     if (!function_exists('acf_register_block_type')) {
       self::log('ACF not available. Dandy Blocks requires ACF to be enabled.');
       return;
     }
 
-    foreach (self::$options['blocks'] as $block_name => $block) {
-      acf_register_block_type([
-        'name' => $block_name,
-        'title' => $block['title'],
-        'description' => $block['description'] ?? '',
-        'icon' => $block['icon'] ?? 'dashicons-editor-help',
-        'keywords' => is_array($block['keywords']) ? array_merge(['dandy'], $block['keywords']) : ['dandy'],
-        'supports' => array_merge([
-          'align' => false,
-          'align_text' => false,
-          'align_content' => false,
-          'anchor' => true,
-          'mode' => true,
-          'multiple' => true
-        ], $block['supports'] ?? []),
-        'example' => $block['example'] ?? [],
-        'category' => $block['category'] ?? self::$category,
-        'render_template' => self::$plugin_path . 'blocks/' . $block_name . '/block.php'
-      ]);
+    foreach (new \DirectoryIterator(self::$plugin_path . '/blocks') as $file) {
+      if ($file->isDir()) {
+        register_block_type(self::$plugin_path . '/blocks/' . $file->getFilename());
+      }
     }
 
     // load theme blocks
