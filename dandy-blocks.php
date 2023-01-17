@@ -26,6 +26,9 @@ class Dandy_Blocks {
     add_filter('acf/settings/load_json', ['FirstAndThird\Dandy\Dandy_Blocks', 'register_acf_fields_path']);
     add_filter('block_categories_all', ['FirstAndThird\Dandy\Dandy_Blocks', 'register_block_category'], 10, 2 );
     add_action('init', ['FirstAndThird\Dandy\Dandy_Blocks', 'register_blocks']);
+    add_action('wp_enqueue_scripts', function() {
+      wp_enqueue_style('dandy-blocks', $plugin_path . '/dist/dandy-blocks.css', array(), filemtime($plugin_path . '/dist/dandy-blocks.css'), false);
+    });
   }
 
   static function log($message) {
