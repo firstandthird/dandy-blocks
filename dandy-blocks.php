@@ -14,8 +14,6 @@ namespace FirstAndThird\Dandy;
 class Dandy_Blocks {
   static $plugin_path = '';
   static $theme_path = '';
-  static $options = [];
-  static $theme_options = [];
   static $category = 'dandy-blocks';
   static $theme_category = 'custom-blocks';
   static $name = 'Dandy Blocks';
@@ -24,16 +22,6 @@ class Dandy_Blocks {
   static function init() {
     self::$plugin_path = plugin_dir_path(__FILE__);
     self::$theme_path = get_stylesheet_directory();
-
-    $config = file_get_contents(self::$plugin_path . 'config.json');
-
-    self::$options = json_decode($config, true);
-
-    if (file_exists(self::$theme_path . '/blocks.json')) {
-      $theme_config = file_get_contents(self::$theme_path . '/blocks.json');
-
-      self::$theme_options = json_decode($theme_config, true);
-    }
 
     add_filter('acf/settings/load_json', ['FirstAndThird\Dandy\Dandy_Blocks', 'register_acf_fields_path']);
     add_filter('block_categories_all', ['FirstAndThird\Dandy\Dandy_Blocks', 'register_block_category'], 10, 2 );
@@ -68,7 +56,7 @@ class Dandy_Blocks {
         [
           'slug' => self::$category,
           'title' => self::$name,
-          'icon'  => '<svg height="100" width="100" xmlns="http://www.w3.org/2000/svg"><path d="M68.154 10a.991.991 0 00-.352.067c-.022.008-.04.024-.061.034a.99.99 0 00-.247.158c-.011.01-.026.013-.037.024-.05.049-5.2 4.902-17.457 7.232-12.258-2.33-17.406-7.183-17.457-7.232-.011-.011-.026-.014-.037-.024a.988.988 0 00-.233-.15c-.027-.013-.05-.033-.078-.044a.992.992 0 00-.349-.065c-.41 0-10.182.086-21.404 7.623a1 1 0 101.116 1.66c7.726-5.19 14.832-6.68 18.214-7.109L17.653 28.218a1 1 0 00-.018 1.18l7.532 10.635-6.587 6.91a1 1 0 00-.08 1.286l30.697 41.367a1 1 0 001.606 0L81.5 48.229a1 1 0 00-.08-1.286l-6.587-6.91L82.365 29.4a1 1 0 00-.018-1.18L70.225 12.17c3.374.423 10.466 1.907 18.217 7.112a1 1 0 101.115-1.66C78.337 10.086 68.565 10 68.155 10zM47.24 18.982l-11.01 6.394-2.782-11.909c2.424 1.588 6.858 3.915 13.792 5.515zm-6.752 6.234c1.708 2.603 3.8 4.085 4.952 4.76l-5.092 13.036-3.643-15.6 3.783-2.196zM20.608 47.714l6.575-6.897a1 1 0 00.092-1.268l-7.585-10.71 11.683-15.467 16.648 71.283-27.413-36.941zM49 80.054l-7.847-33.601 6.474-16.577c.028-.07.026-.14.037-.211.008-.053.028-.103.027-.155 0-.08-.023-.155-.042-.231-.011-.048-.013-.098-.032-.143-.028-.07-.076-.13-.12-.192-.03-.043-.052-.09-.09-.129-.05-.05-.115-.084-.176-.124-.046-.03-.081-.071-.133-.094-.03-.014-2.786-1.261-4.877-4.387L49 20.273v59.781zm17.55-66.587l-2.78 11.909-11.01-6.394c6.933-1.6 11.367-3.927 13.79-5.515zm-3.256 13.946L59.65 43.012l-5.092-13.035c1.151-.676 3.244-2.158 4.952-4.761l3.783 2.197zM51 20.273l6.78 3.937c-2.092 3.126-4.848 4.373-4.878 4.387-.055.024-.094.067-.143.1-.056.038-.118.069-.165.116-.045.046-.073.103-.108.156-.035.054-.078.102-.102.162-.025.058-.029.122-.042.184-.013.063-.034.124-.034.19-.001.064.021.128.033.193.012.06.009.12.032.178l6.474 16.577L51 80.054V20.273zm29.31 8.567l-7.585 10.709a1 1 0 00.092 1.268l6.575 6.897-27.413 36.94 16.648-71.282L80.31 28.84z"/></svg>'
+          'icon'  => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M68.2 10a1 1 0 0 0-.4 0v.1a1 1 0 0 0-.3.2s-5.2 4.9-17.5 7.2a36.4 36.4 0 0 1-17.5-7.2 1 1 0 0 0-.2-.2h-.1a1 1 0 0 0-.4-.1c-.4 0-10.1 0-21.4 7.6a1 1 0 1 0 1.2 1.7 43 43 0 0 1 18.2-7.1l-12.1 16a1 1 0 0 0 0 1.2L25.1 40l-6.6 7a1 1 0 0 0-.1 1.2l30.7 41.4a1 1 0 0 0 1.6 0l30.7-41.4a1 1 0 0 0 0-1.3L74.7 40l7.6-10.6a1 1 0 0 0 0-1.2l-12.2-16a43 43 0 0 1 18.2 7 1 1 0 1 0 1.2-1.6A41.7 41.7 0 0 0 68.2 10zm-21 9-11 6.4-2.8-12c2.5 1.7 7 4 13.8 5.6zm-6.7 6.2c1.7 2.6 3.8 4.1 5 4.8l-5.2 13-3.6-15.6 3.8-2.2zM20.6 47.7l6.6-6.9a1 1 0 0 0 0-1.3l-7.5-10.7 11.7-15.4L48 84.7l-27.4-37zM49 80.1l-7.8-33.6 6.4-16.6V29l-.1-.2-.3-.2-.1-.1s-2.8-1.3-4.9-4.4l6.8-4V80zm17.6-66.6-2.8 11.9-11-6.4c6.9-1.6 11.3-4 13.8-5.5zm-3.3 14L59.7 43l-5.1-13c1.1-.7 3.2-2.2 5-4.8l3.7 2.2zM51 20.2l6.8 4c-2.1 3-4.9 4.3-4.9 4.3l-.1.1-.2.1-.1.2-.1.1v.8l6.4 16.6L51 80V20.3zm29.3 8.5-7.6 10.7a1 1 0 0 0 .1 1.3l6.6 7L52 84.6l16.6-71.3 11.7 15.4z"/></svg>'
         ],
         [
           'slug' => self::$theme_category,
@@ -96,57 +84,6 @@ class Dandy_Blocks {
       if ($file->isDir()) {
         register_block_type(self::$theme_path . '/blocks/' . $file->getFilename());
       }
-    }
-
-    // load v5 plugin blocks
-    if (isset(self::$options['blocks'])) {
-      foreach (self::$options['blocks'] as $block_name => $block) {
-        acf_register_block_type([
-          'name' => $block_name,
-          'title' => $block['title'],
-          'description' => $block['description'] ?? '',
-          'icon' => $block['icon'] ?? 'dashicons-editor-help',
-          'keywords' => is_array($block['keywords']) ? array_merge(['dandy'], $block['keywords']) : ['dandy'],
-          'supports' => array_merge([
-            'align' => false,
-            'align_text' => false,
-            'align_content' => false,
-            'anchor' => true,
-            'mode' => true,
-            'multiple' => true
-          ], $block['supports'] ?? []),
-          'example' => $block['example'] ?? [],
-          'category' => $block['category'] ?? self::$category,
-          'render_template' => self::$plugin_path . 'blocks/' . $block_name . '/block.php'
-        ]);
-      }
-    } else {
-      self::log('Dandy Blocks: Plugin Notice: No v5 blocks detected, or your config is incorrect.');
-    }
-
-    // load v5 theme blocks
-    if (!empty(self::$theme_options['blocks'])) {
-      foreach (self::$theme_options['blocks'] as $block_name => $block) {
-        acf_register_block_type([
-          'name' => $block_name,
-          'title' => $block['title'],
-          'description' => $block['description'] ?? '',
-          'icon' => $block['icon'] ?? 'dashicons-editor-help',
-          'keywords' => is_array($block['keywords']) ? array_merge(['dandy'], $block['keywords']) : ['dandy'],
-          'supports' => array_merge([
-            'align' => false,
-            'align_text' => false,
-            'align_content' => false,
-            'mode' => true,
-            'multiple' => true
-          ], $block['supports'] ?? []),
-          'example' => $block['example'] ?? [],
-          'category' => $block['category'] ?? self::$theme_category,
-          'render_template' => self::$theme_path . '/blocks/' . $block_name . '/block.php'
-        ]);
-      }
-    } else {
-      self::log('Dandy Blocks: Theme Notice: No v5 blocks detected, or your config is incorrect.');
     }
   }
 }
