@@ -1,13 +1,13 @@
 {
-  "name": "acf/testimonial",
-  "title": "Testimonial",
+  "name": "acf/dandy-testimonial",
+  "title": "Dandy Testimonial",
   "description": "A custom testimonial block.",
-  "category": "formatting",
+  "category": "dandy-blocks",
   "icon": "admin-comments",
   "keywords": ["testimonial", "quote"],
+  "align": "full",
   "acf": {
     "mode": "preview",
     "renderTemplate": "testimonial.php"
-  },
-  "align": "full"
+  }
 }
