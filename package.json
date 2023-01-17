@@ -4,8 +4,8 @@
   "description": "A collection of Gutenberg blocks built on ACF and Tailwind.",
   "main": "tailwind.config.js",
   "scripts": {
-    "build": "tailwindcss -i ./dandy-blocks.css -o ./dist/dandy-blocks.css",
-    "dev": "tailwindcss -i ./dandy-blocks.css -o ./dist/dandy-blocks.css --watch"
+    "build": "tailwindcss -i ./src/dandy-blocks.css -o ./dist/dandy-blocks.css",
+    "dev": "tailwindcss -i ./src/dandy-blocks.css -o ./dist/dandy-blocks.css --watch"
   },
   "repository": {
     "type": "git",
