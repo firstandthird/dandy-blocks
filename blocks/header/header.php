@@ -16,7 +16,7 @@ if (!empty($block['anchor'])) {
 }
 
 // Create class attribute allowing for custom "className"
-$class_name = 'dandy-block__header';
+$class_name = 'dandy-header';
 if (!empty($block['className'])) {
   $class_name .= ' ' . $block['className'];
 }
@@ -31,9 +31,9 @@ $header_link = get_field('header_link') ?: null;
   <?php if (!empty($header_link)): ?>
   <a href="<?= esc_url($header_link); ?>">
   <?php endif; ?>
-    <<?= esc_attr($heading_level); ?> class="dandy-block__heade__title">
+    <<?= esc_attr($heading_level); ?> class="dandy-header__title">
       <?= esc_html($text); ?>
-      <?php if (!empty($subtitle)): ?>
+      <?php if (!!isset($subtitle)): ?>
       <span class="sr-only"><?= esc_html($subtitle); ?></span>
       <?php endif; ?>
     </<?= esc_attr($heading_level); ?>>
