@@ -1,0 +1,31 @@
+{
+  "name": "dandy-blocks",
+  "version": "1.0.0",
+  "description": "A collection of Gutenberg blocks built on ACF and Tailwind.",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "build": "tailwindcss -i ./dandy-blocks.css -o ./dist/dandy-blocks.css",
+    "dev": "tailwindcss -i ./dandy-blocks.css -o ./dist/dandy-blocks.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firstandthird/dandy-blocks.git"
+  },
+  "keywords": [
+    "wordpress",
+    "firstandthird",
+    "module",
+    "plugin"
+  ],
+  "author": "First+Third",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/firstandthird/dandy-blocks/issues"
+  },
+  "homepage": "https://github.com/firstandthird/dandy-blocks#readme",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "tailwindcss": "^3.2.4"
+  }
+}
