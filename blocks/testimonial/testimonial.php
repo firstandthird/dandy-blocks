@@ -10,7 +10,6 @@
  *          or the post ID of the post hosting this block.
  * @param   array $context The context provided to the block by the post or it's parent block.
  */
-global $block;
 
 // Support custom "anchor" values.
 $anchor = '';

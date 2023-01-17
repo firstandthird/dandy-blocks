@@ -2,10 +2,10 @@
   "name": "acf/dandy-testimonial",
   "title": "Dandy Testimonial",
   "description": "A custom testimonial block.",
+  "script": "./testimonial.js",
   "category": "dandy-blocks",
   "icon": "admin-comments",
   "keywords": ["testimonial", "quote"],
-  "align": "full",
   "acf": {
     "mode": "preview",
     "renderTemplate": "testimonial.php"
