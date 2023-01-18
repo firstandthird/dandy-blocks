@@ -1,6 +1,6 @@
 {
   "key": "group_6055388c7d459",
-  "title": "Dandy Block: Header",
+  "title": "F+T Block: Header",
   "fields": [
     {
       "key": "field_6055389fbca70",
@@ -91,7 +91,7 @@
       {
         "param": "block",
         "operator": "==",
-        "value": "acf/dandy-header"
+        "value": "acf/ft-header"
       }
     ]
   ],

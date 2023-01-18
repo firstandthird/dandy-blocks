@@ -1,34 +1,34 @@
 <?php
 /**
- * Plugin Name: Dandy Plugins
+ * Plugin Name: F+T Blocks Manager
  * Description: A collection of Gutenberg blocks built on top of ACF.
  * Version: 1.1.0
  * Author: First+Third
  * Author URI: https://firstandthird.com
- * Requires at least: 5.9.0
+ * Requires at least: 6.0.0
  * Requires PHP: 7
  */
 
-namespace FirstAndThird\Dandy;
+namespace FirstAndThird\FT_Blocks;
 
-class Dandy_Blocks {
+class FT_Blocks_Manager {
   static $plugin_path = '';
   static $theme_path = '';
-  static $category = 'dandy-blocks';
+  static $category = 'ft-blocks';
   static $theme_category = 'custom-blocks';
-  static $name = 'Dandy Blocks';
+  static $name = 'F+T Blocks';
   static $theme_name = 'Custom Blocks';
 
   static function init() {
     self::$plugin_path = plugin_dir_path(__FILE__);
     self::$theme_path = get_stylesheet_directory();
 
-    add_filter('acf/settings/load_json', ['FirstAndThird\Dandy\Dandy_Blocks', 'register_acf_fields_path']);
-    add_filter('block_categories_all', ['FirstAndThird\Dandy\Dandy_Blocks', 'register_block_category'], 10, 2 );
-    add_action('init', ['FirstAndThird\Dandy\Dandy_Blocks', 'register_blocks']);
-    add_action('admin_init', ['FirstAndThird\Dandy\Dandy_Blocks', 'register_editor_styles']);
+    add_filter('acf/settings/load_json', ['FirstAndThird\FT_Blocks\FT_Blocks_Manager', 'register_acf_fields_path']);
+    add_filter('block_categories_all', ['FirstAndThird\FT_Blocks\FT_Blocks_Manager', 'register_block_category'], 10, 2 );
+    add_action('init', ['FirstAndThird\FT_Blocks\FT_Blocks_Manager', 'register_blocks']);
+    add_action('admin_init', ['FirstAndThird\FT_Blocks\FT_Blocks_Manager', 'register_editor_styles']);
     add_action('wp_enqueue_scripts', function() {
-      wp_enqueue_style('dandy-blocks', plugin_dir_url(__FILE__) . 'dist/dandy-blocks.css', array());
+      wp_enqueue_style('ft-blocks', plugin_dir_url(__FILE__) . 'dist/ft-blocks.css', array());
     });
   }
 
@@ -48,7 +48,7 @@ class Dandy_Blocks {
   }
 
   static function register_editor_styles() {
-    wp_enqueue_style('dandy-blocks-editor', plugins_url('dist/editor-style.css', __FILE__));
+    wp_enqueue_style('ft-blocks-editor', plugins_url('dist/editor-style.css', __FILE__));
   }
 
   static function register_acf_fields_path($paths) {
@@ -76,7 +76,7 @@ class Dandy_Blocks {
 
   static function register_blocks() {
     if (!function_exists('acf_register_block_type')) {
-      self::log('ACF not available. Dandy Blocks requires ACF to be enabled.');
+      self::log('ACF not available. F+T Blocks Manager requires ACF to be enabled.');
       return;
     }
 
@@ -100,4 +100,4 @@ class Dandy_Blocks {
   }
 }
 
-Dandy_Blocks::init();
+FT_Blocks_Manager::init();

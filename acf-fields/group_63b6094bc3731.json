@@ -1,6 +1,6 @@
 {
   "key": "group_63b6094bc3731",
-  "title": "Dandy Block: Testimonial",
+  "title": "F+T Block: Testimonial",
   "fields": [
     {
       "key": "field_63b6094bda42b",
@@ -68,7 +68,7 @@
       {
         "param": "block",
         "operator": "==",
-        "value": "acf/dandy-testimonial"
+        "value": "acf/ft-testimonial"
       }
     ]
   ],

@@ -1,9 +1,9 @@
 {
-  "name": "acf/dandy-testimonial",
-  "title": "Dandy Testimonial",
+  "name": "acf/ft-testimonial",
+  "title": "Testimonial",
   "description": "A custom testimonial block.",
   "script": "./testimonial.js",
-  "category": "dandy-blocks",
+  "category": "ft-blocks",
   "icon": "admin-comments",
   "keywords": ["testimonial", "quote"],
   "acf": {

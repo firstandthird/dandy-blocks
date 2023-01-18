@@ -10,13 +10,13 @@
  */
 
 // Create id attribute allowing for custom "anchor" value.
-$block_id = 'dandy-header-' . $block['id'];
+$block_id = 'ft-header-' . $block['id'];
 if (!empty($block['anchor'])) {
   $block_id = $block['anchor'];
 }
 
 // Create class attribute allowing for custom "className"
-$class_name = 'dandy-header';
+$class_name = 'ft-header';
 if (!empty($block['className'])) {
   $class_name .= ' ' . $block['className'];
 }
@@ -31,7 +31,7 @@ $header_link = get_field('header_link') ?: null;
   <?php if (!empty($header_link)): ?>
   <a href="<?= esc_url($header_link); ?>">
   <?php endif; ?>
-    <<?= esc_attr($heading_level); ?> class="dandy-header__title">
+    <<?= esc_attr($heading_level); ?> class="ft-header__title">
       <?= esc_html($text); ?>
       <?php if (!!isset($subtitle)): ?>
       <span class="sr-only"><?= esc_html($subtitle); ?></span>
@@ -42,7 +42,7 @@ $header_link = get_field('header_link') ?: null;
   <?php endif; ?>
 
   <?php if (!empty($subtitle)) : ?>
-  <p class="dandy-block__header__subtitle display-flex flex-space-between-center margin-top-sm" aria-hidden="true">
+  <p class="ft-header__subtitle display-flex flex-space-between-center margin-top-sm" aria-hidden="true">
     <span class="margin-xaxis-xs font-small text-stretched text-uppercase font-secondary">
       <?= esc_html($subtitle); ?>
     </span>
