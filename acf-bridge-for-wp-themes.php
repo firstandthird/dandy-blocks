@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Dandy Plugins
- * Description: A collection of Gutenberg blocks built on top of ACF.
- * Version: 1.1.0
+ * Plugin Name: ACF Bridge for WP Themes
+ * Description: Automatically scan your theme for ACF blocks and enqueue them.
+ * Version: 1.0.0
  * Author: First+Third
  * Author URI: https://firstandthird.com
  * Requires at least: 5.9.0
@@ -11,7 +11,7 @@
 
 namespace FirstAndThird\Dandy;
 
-class Dandy_Blocks {
+class ACF_Bridge {
   static $theme_path = '';
   static $theme_options = [];
   static $theme_category = 'custom-blocks';
@@ -26,8 +26,8 @@ class Dandy_Blocks {
       self::$theme_options = json_decode($theme_config, true);
     }
 
-    add_filter('block_categories_all', ['FirstAndThird\Dandy\Dandy_Blocks', 'register_block_category'], 10, 2 );
-    add_action('init', ['FirstAndThird\Dandy\Dandy_Blocks', 'register_blocks']);
+    add_filter('block_categories_all', ['FirstAndThird\Dandy\ACF_Bridge', 'register_block_category'], 10, 2 );
+    add_action('init', ['FirstAndThird\Dandy\ACF_Bridge', 'register_blocks']);
   }
 
   static function log($message) {
@@ -59,7 +59,7 @@ class Dandy_Blocks {
 
   static function register_blocks() {
     if (!function_exists('acf_register_block_type')) {
-      self::log('ACF not available. Dandy Blocks requires ACF to be enabled.');
+      self::log('ACF not available. ACF Bridge requires ACF to be enabled.');
       return;
     }
 
@@ -88,4 +88,4 @@ class Dandy_Blocks {
   }
 }
 
-Dandy_Blocks::init();
+ACF_Bridge::init();
