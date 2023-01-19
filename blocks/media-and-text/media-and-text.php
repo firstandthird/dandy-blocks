@@ -50,6 +50,11 @@
            <h2 class="mb-1.5"><?= wp_kses_post( $block_title ); ?></h2>
          <?php endif; ?>
          <div><?= wp_kses_post( $block_copy ); ?></div>
+         <?php if ( ! empty( $cta['text'] ) && ! empty( $cta['url'] ) ) : ?>
+          <div class="mt-8">
+            <a href="<?= esc_url($cta['url']['url']) ?>" class="bg-black text-white px-5 py-2"><?= esc_html($cta['text']); ?></a>
+          </div>
+        <?php endif; ?>
        </div>
      </div>
      <div class="mb-5 xl:w-1/2 lg:mb-0 lg:w-2/5 lg:flex lg:items-center<?php if ( $is_media_left ): ?> lg:-order-1<?php endif; ?>">

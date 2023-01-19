@@ -1,6 +1,6 @@
 {
   "key": "group_62dea18a827cb",
-  "title": "Media & Text",
+  "title": "F+T Block: Media & Text",
   "fields": [
     {
       "key": "field_62dea193940d2",
@@ -159,7 +159,7 @@
       {
         "param": "block",
         "operator": "==",
-        "value": "acf/media-and-text"
+        "value": "acf/ft-media-text"
       }
     ]
   ],
