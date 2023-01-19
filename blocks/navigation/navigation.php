@@ -32,10 +32,10 @@ if ( ! empty( $block['align'] ) ) {
 <?php
 wp_nav_menu(
   array(
-      'container_class' => 'ft-navigation-block-inner',
-      'menu_class'      => 'ft-navigation-block-list cluster flex max-w-fit flex-wrap items-center justify-start gap-0 overflow-hidden rounded-md border-2 border-b-0',
+      'container_class' => 'ft-navigation-block__inner',
+      'menu_class'      => 'ft-navigation-block__list flex max-w-fit flex-wrap items-center justify-start gap-0',
       'theme_location'  => 'primary',
-      'li_class'        => '!list-none text-blue-500',
+      'li_class'        => '!list-none',
       'fallback_cb'     => false,
   )
 );

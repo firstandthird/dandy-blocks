@@ -1,5 +1,5 @@
 {
-  "name": "acf/ft-navigation",
+  "name": "ft/navigation",
   "title": "Navigation",
   "description": "A custom navigation block.",
   "style": ["file:./navigation.css"],

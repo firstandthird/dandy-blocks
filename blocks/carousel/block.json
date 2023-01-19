@@ -1,5 +1,5 @@
 {
-  "name": "acf/ft-carousel",
+  "name": "ft/carousel",
   "title": "Carousel",
   "description": "A configurable carousel block.",
   "style": ["file:./carousel.css"],

@@ -159,7 +159,7 @@
       {
         "param": "block",
         "operator": "==",
-        "value": "acf/ft-media-text"
+        "value": "ft/media-text"
       }
     ]
   ],

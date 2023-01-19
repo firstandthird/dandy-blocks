@@ -1,13 +1,14 @@
-ul.cluster > li > a {
+ul.ft-navigation-block__list > li > a {
   display: block;
-  border-bottom: 2px solid rgb(229 231 235);
+  border-bottom: 2px solid transparent;
   padding: 1rem 1.5rem;
+  text-decoration: none !important;
 }
 
-ul.cluster > li > a:hover {
+ul.ft-navigation-block__list > li > a:hover {
   border-color: rgb(59 130 246);
 }
 
-ul.cluster > li > a:active {
+ul.ft-navigation-block__list > li > a:active {
   border-color: rgb(100 116 139);
 }

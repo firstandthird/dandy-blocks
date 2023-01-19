@@ -1,5 +1,5 @@
 {
-  "name": "acf/ft-testimonial",
+  "name": "ft/testimonial",
   "title": "Testimonial",
   "description": "A custom testimonial block.",
   "script": "./testimonial.js",

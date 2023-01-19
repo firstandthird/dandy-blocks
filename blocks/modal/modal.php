@@ -29,7 +29,8 @@ if ( ! empty( $block['align'] ) ) {
 ?>
 
 <div
- class="imposter"
+ <?= esc_attr($anchor); ?>
+ class="<?= esc_attr($class_name); ?> p-4 rounded bg-white shadow-md"
 >
   <p>Superimposed content</p>
 </div>

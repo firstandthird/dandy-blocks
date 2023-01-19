@@ -322,7 +322,7 @@
       {
         "param": "block",
         "operator": "==",
-        "value": "acf/ft-hero"
+        "value": "ft/hero"
       }
     ]
   ],

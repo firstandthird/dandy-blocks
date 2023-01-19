@@ -68,7 +68,7 @@
       {
         "param": "block",
         "operator": "==",
-        "value": "acf/ft-testimonial"
+        "value": "ft/testimonial"
       }
     ]
   ],
