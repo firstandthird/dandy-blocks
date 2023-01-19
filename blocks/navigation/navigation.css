@@ -1,0 +1,13 @@
+ul.cluster > li > a {
+  display: block;
+  border-bottom: 2px solid rgb(229 231 235);
+  padding: 1rem 1.5rem;
+}
+
+ul.cluster > li > a:hover {
+  border-color: rgb(59 130 246);
+}
+
+ul.cluster > li > a:active {
+  border-color: rgb(100 116 139);
+}
