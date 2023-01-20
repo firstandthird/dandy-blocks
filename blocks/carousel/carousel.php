@@ -29,34 +29,37 @@ if ( ! empty( $block['align'] ) ) {
 
 <div
  <?= esc_attr($anchor); ?>
- class="<?= esc_attr($class_name); ?>"
+ class="<?= esc_attr($class_name); ?> h-[50vh]"
 >
-  <?php if( have_rows('carousel_items') ): ?>
-    <?php while( have_rows('carousel_items') ): the_row(); ?>
+  <?php if( have_rows('carousel_item') ): ?>
+    <?php while( have_rows('carousel_item') ): the_row(); ?>
+    <div class="aspect-[0.618] h-full w-auto">
       <?php if( get_row_layout() == 'image_and_text' ):
         $image = get_sub_field('image');
         $title = get_sub_field('title');
         $content = get_sub_field('content');
         ?>
-        <figure>
-          <?php echo wp_get_attachment_image( $image['ID'], 'full' ); ?>
-          <figcaption><?php echo $image['caption']; ?></figcaption>
-        </figure>
-        <h3><?= esc_html($title) ?></h3>
+        <?php echo wp_get_attachment_image( $image['ID'], 'large' ); ?>
+        <div class="p-4">
+        <h3 class="mb-2 font-bold"><?= esc_html($title) ?></h3>
         <p><?= esc_html($content) ?></p>
+        </div>
       <?php elseif( get_row_layout() == 'text_w_image_bg' ):
         $image = get_sub_field('image');
         $title = get_sub_field('title');
         $content = get_sub_field('content');
         ?>
-        <?php echo wp_get_attachment_image( $image['ID'], 'full' ); ?>
+        <?php echo wp_get_attachment_image( $image['ID'], 'large', false, [
+          'class' => 'h-full w-full object-cover'
+        ] ); ?>
         <h3><?= esc_html($title) ?></h3>
         <p><?= esc_html($content) ?></p>
       <?php elseif( get_row_layout() == 'full-size_image' ):
         $image = get_sub_field('image');
         ?>
-        <?php echo wp_get_attachment_image( $image['ID'], 'full' ); ?>
+        <?php echo wp_get_attachment_image( $image['ID'], 'large' ); ?>
       <?php endif; ?>
+    </div>
     <?php endwhile; ?>
   <?php endif; ?>
 </div>

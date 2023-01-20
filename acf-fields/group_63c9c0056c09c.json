@@ -40,7 +40,7 @@
               },
               "uploader": "",
               "acfe_thumbnail": 0,
-              "return_format": "",
+              "return_format": "array",
               "library": "",
               "min_width": "",
               "min_height": "",
