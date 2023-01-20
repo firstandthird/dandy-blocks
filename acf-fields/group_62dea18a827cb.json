@@ -133,25 +133,6 @@
       "max_height": "",
       "max_size": "",
       "mime_types": ""
-    },
-    {
-      "key": "field_62e3c6e9be0e1",
-      "label": "Journey Lines",
-      "name": "journey_lines",
-      "type": "true_false",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "message": "",
-      "default_value": 0,
-      "ui": 1,
-      "ui_on_text": "",
-      "ui_off_text": ""
     }
   ],
   "location": [
