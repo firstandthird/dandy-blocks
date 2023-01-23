@@ -134,28 +134,6 @@
           "parent_repeater": "field_63cef5771f306"
         }
       ]
-    },
-    {
-      "key": "field_63cef6be1f30b",
-      "label": "Number of Columns",
-      "name": "number_of_columns",
-      "aria-label": "",
-      "type": "number",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": 3,
-      "min": 1,
-      "max": 6,
-      "placeholder": "",
-      "step": "",
-      "prepend": "",
-      "append": ""
     }
   ],
   "location": [

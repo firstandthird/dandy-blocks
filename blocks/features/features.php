@@ -12,7 +12,6 @@
 
  $section_title = get_field('section_title');
  $featured_items = get_field('featured_items');
- $number_of_cols = get_field('number_of_columns');
 
 // Support custom "anchor" values.
 $anchor = '';
@@ -40,7 +39,7 @@ if ( ! empty( $block['align'] ) ) {
   <h3><?= esc_html($section_title) ?></h3>
   <?php endif; ?>
   <?php if( have_rows('featured_items') ): ?>
-    <div>
+    <div class="<?= esc_attr(no_of_cols()) ?>">
     <?php while( have_rows('featured_items') ): the_row(); ?>
       <div class="flex justify-between items-center gap-2">
         <?php
@@ -59,10 +58,10 @@ if ( ! empty( $block['align'] ) ) {
         <h4 class="mb-2 font-bold"><?= esc_html($title) ?></h4>
         <?php endif;
         if (!empty($content)): ?>
-        <p><?= esc_html($content) ?></p>
+        <p class="!mb-0"><?= esc_html($content) ?></p>
         <?php endif;
         if (!empty($cta)): ?>
-        <a href=<?= esc_url($cta['url']) ?> class="inline-block bg-black px-4 py-2 text-white"><?= esc_html($cta['title']) ?></a>
+        <a href=<?= esc_url($cta['url']) ?> class="inline-block bg-black mt-2 px-4 py-2 text-white"><?= esc_html($cta['title']) ?></a>
         <?php endif; ?>
         </div>
         <?php endif; ?>
