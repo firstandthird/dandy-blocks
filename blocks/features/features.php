@@ -39,7 +39,7 @@ if ( ! empty( $block['align'] ) ) {
   <h3><?= esc_html($section_title) ?></h3>
   <?php endif; ?>
   <?php if( have_rows('featured_items') ): ?>
-    <div class="<?= esc_attr(no_of_cols()) ?>">
+    <div>
     <?php while( have_rows('featured_items') ): the_row(); ?>
       <div class="flex justify-between items-center gap-2">
         <?php
