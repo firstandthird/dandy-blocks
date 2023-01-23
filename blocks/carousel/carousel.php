@@ -33,8 +33,9 @@ if ( ! empty( $block['align'] ) ) {
 >
   <?php if( have_rows('carousel_item') ): ?>
     <?php while( have_rows('carousel_item') ): the_row(); ?>
-    <div class="relative aspect-[0.618] h-full w-auto">
-      <?php if( get_row_layout() == 'image_and_text' ):
+    <div class="relative h-full w-auto
+      <?php if (get_row_layout() !== 'full-size_image') echo esc_attr(' aspect-[0.618]'); ?>">
+      <?php if( get_row_layout() === 'image_and_text' ):
         $image = get_sub_field('image');
         $title = get_sub_field('title');
         $content = get_sub_field('content');
@@ -44,13 +45,13 @@ if ( ! empty( $block['align'] ) ) {
         <h3 class="mb-2 font-bold"><?= esc_html($title) ?></h3>
         <p><?= esc_html($content) ?></p>
         </div>
-      <?php elseif( get_row_layout() == 'text_w_image_bg' ):
+      <?php elseif( get_row_layout() === 'text_w_image_bg' ):
         $image = get_sub_field('image');
         $title = get_sub_field('title');
         $content = get_sub_field('content');
         ?>
         <?php echo wp_get_attachment_image( $image['ID'], 'large', false, [
-          'class' => 'relative z-10 flex h-full w-full flex-col justify-between p-8 bg-black bg-opacity-70 text-white'
+          'class' => 'absolute z-0 h-full w-full object-cover'
         ] ); ?>
         <div class="relative z-10 flex h-full w-full flex-col justify-between p-8 bg-black bg-opacity-70 text-white">
           <h3><?= esc_html($title) ?></h3>
