@@ -60,25 +60,6 @@
       "maxlength": ""
     },
     {
-      "key": "field_62db15d5a724c",
-      "label": "Prescript",
-      "name": "prescript",
-      "type": "textarea",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "placeholder": "",
-      "maxlength": "",
-      "rows": "",
-      "new_lines": ""
-    },
-    {
       "key": "field_62db15e4a724d",
       "label": "Content",
       "name": "content",
