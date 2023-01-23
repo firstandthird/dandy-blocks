@@ -33,7 +33,7 @@ if ( ! empty( $block['align'] ) ) {
 >
   <?php if( have_rows('carousel_item') ): ?>
     <?php while( have_rows('carousel_item') ): the_row(); ?>
-    <div class="aspect-[0.618] h-full w-auto">
+    <div class="relative aspect-[0.618] h-full w-auto">
       <?php if( get_row_layout() == 'image_and_text' ):
         $image = get_sub_field('image');
         $title = get_sub_field('title');
@@ -50,10 +50,12 @@ if ( ! empty( $block['align'] ) ) {
         $content = get_sub_field('content');
         ?>
         <?php echo wp_get_attachment_image( $image['ID'], 'large', false, [
-          'class' => 'h-full w-full object-cover'
+          'class' => 'relative z-10 flex h-full w-full flex-col justify-between p-8 bg-black bg-opacity-70 text-white'
         ] ); ?>
-        <h3><?= esc_html($title) ?></h3>
-        <p><?= esc_html($content) ?></p>
+        <div class="relative z-10 flex h-full w-full flex-col justify-between p-8 bg-black bg-opacity-70 text-white">
+          <h3><?= esc_html($title) ?></h3>
+          <p><?= esc_html($content) ?></p>
+        </div>
       <?php elseif( get_row_layout() == 'full-size_image' ):
         $image = get_sub_field('image');
         ?>
