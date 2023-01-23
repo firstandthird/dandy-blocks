@@ -10,13 +10,13 @@
  */
 
 // Create id attribute allowing for custom "anchor" value.
-$block_id = 'ft-header-' . $block['id'];
-if (!empty($block['anchor'])) {
-  $block_id = $block['anchor'];
+$anchor = '';
+if ( ! empty( $block['anchor'] ) ) {
+  $anchor = esc_attr( $block['anchor'] );
 }
 
 // Create class attribute allowing for custom "className"
-$class_name = 'ft-header mb-4';
+$class_name = 'ft-header-block mb-4';
 if (!empty($block['className'])) {
   $class_name .= ' ' . $block['className'];
 }
@@ -27,7 +27,10 @@ $heading_level = get_field('heading_level') ?: 'h2';
 $header_link = get_field('header_link') ?: null;
 ?>
 
-<section id="<?= esc_attr($block_id); ?>" class="<?= esc_attr($class_name); ?>">
+<section
+  <?= esc_attr($anchor); ?>
+  class="<?= esc_attr($class_name); ?>"
+>
   <?php if (!empty($header_link)): ?>
   <a href="<?= esc_url($header_link); ?>">
   <?php endif; ?>

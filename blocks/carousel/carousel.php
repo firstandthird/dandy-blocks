@@ -17,7 +17,7 @@ if ( ! empty( $block['anchor'] ) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$class_name = 'ft-carousel mb-4 h-[50vh]';
+$class_name = 'ft-carousel-block mb-4 h-[50vh]';
 if ( ! empty( $block['className'] ) ) {
   $class_name .= ' ' . $block['className'];
 }
@@ -60,7 +60,9 @@ if ( ! empty( $block['align'] ) ) {
       <?php elseif( get_row_layout() == 'full-size_image' ):
         $image = get_sub_field('image');
         ?>
-        <?php echo wp_get_attachment_image( $image['ID'], 'large' ); ?>
+        <?php echo wp_get_attachment_image( $image['ID'], 'large', false, [
+          'class' => 'h-full w-auto'
+        ] ); ?>
       <?php endif; ?>
     </div>
     <?php endwhile; ?>
