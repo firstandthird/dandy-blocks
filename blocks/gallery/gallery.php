@@ -15,7 +15,7 @@ if ( ! empty( $block['anchor'] ) ) {
 }
 
 // Create class attribute allowing for custom "className"
-$class_name = 'ft-card-block mx-auto mb-4 !max-w-xs shadow-md';
+$class_name = 'ft-gallery-block';
 if (!empty($block['className'])) {
   $class_name .= ' ' . $block['className'];
 }
@@ -28,4 +28,11 @@ $images = get_field('images');
   <?= esc_attr($anchor); ?>
   class="<?= esc_attr($class_name); ?>"
 >
+<?php if( $images ): ?>
+  <?php
+  foreach( $images as $image ):
+    echo wp_get_attachment_image( $image['ID'], 'full' );
+  endforeach;
+  ?>
+<?php endif; ?>
 </section>
