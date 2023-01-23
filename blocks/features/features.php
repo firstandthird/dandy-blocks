@@ -40,7 +40,7 @@ if ( ! empty( $block['align'] ) ) {
   <h3><?= esc_html($section_title) ?></h3>
   <?php endif; ?>
   <?php if( have_rows('featured_items') ): ?>
-    <div class="grid gap-4">
+    <div>
     <?php while( have_rows('featured_items') ): the_row(); ?>
       <div class="flex justify-between items-center gap-2">
         <?php
@@ -50,7 +50,9 @@ if ( ! empty( $block['align'] ) ) {
         $cta = get_sub_field('cta');
         ?>
 
-        <?php if (!empty($image)) { echo wp_get_attachment_image( $image, 'large' ); } ?>
+        <?php if (!empty($image)) { echo wp_get_attachment_image( $image, 'large', false, [
+          'class' => 'w-[33%]'
+        ] ); } ?>
         <?php if (!empty($title) or !empty($content)): ?>
         <div>
         <?php if (!empty($title)): ?>
