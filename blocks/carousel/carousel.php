@@ -17,7 +17,7 @@ if ( ! empty( $block['anchor'] ) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$class_name = 'ft-carousel';
+$class_name = 'ft-carousel mb-4 h-[50vh]';
 if ( ! empty( $block['className'] ) ) {
   $class_name .= ' ' . $block['className'];
 }
@@ -29,7 +29,7 @@ if ( ! empty( $block['align'] ) ) {
 
 <div
  <?= esc_attr($anchor); ?>
- class="<?= esc_attr($class_name); ?> h-[50vh]"
+ class="<?= esc_attr($class_name); ?>"
 >
   <?php if( have_rows('carousel_item') ): ?>
     <?php while( have_rows('carousel_item') ): the_row(); ?>

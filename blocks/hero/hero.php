@@ -1,6 +1,6 @@
 <?php
 /**
- * Hero Block Template.
+ * F+T Hero Block
  *
  * @param   array $block The block settings and attributes.
  * @param   string $content The block inner HTML (empty).
@@ -30,7 +30,7 @@ if ( ! empty( $block['anchor'] ) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$class_name = 'ft-hero-block';
+$class_name = 'ft-hero-block mb-4';
 if ( ! empty( $block['className'] ) ) {
     $class_name .= ' ' . $block['className'];
 }

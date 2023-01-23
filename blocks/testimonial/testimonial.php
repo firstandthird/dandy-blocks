@@ -1,6 +1,6 @@
 <?php
 /**
- * Testimonial Block Template.
+ * F+T Testimonial Block
  *
  * @param   array $block The block settings and attributes.
  * @param   string $content The block inner HTML (empty).
@@ -18,7 +18,7 @@ if ( ! empty($block['anchor']) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$class_name = 'testimonial-block';
+$class_name = 'ft-testimonial-block mb-4';
 if ( ! empty($block['className']) ) {
   $class_name .= ' ' . $block['className'];
 }

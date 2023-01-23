@@ -1,6 +1,6 @@
 <?php
 /**
- * Media & Text Block Template.
+ * F+T Media & Text Block
  *
  * @param   array $block The block settings and attributes.
  * @param   string $content The block inner HTML (empty).
@@ -23,7 +23,7 @@
   }
 
   // Create class attribute allowing for custom "className" and "align" values.
-  $class_name = 'ft-media-text-block';
+  $class_name = 'ft-media-text-block mb-4';
   if ( ! empty( $block['className'] ) ) {
       $class_name .= ' ' . $block['className'];
   }
