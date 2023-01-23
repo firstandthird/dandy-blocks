@@ -1,4 +1,4 @@
-.ft-carousel {
+.ft-carousel-block {
   display: flex;
   block-size: auto;
   overflow-x: auto;
@@ -6,15 +6,15 @@
   scrollbar-color: #fff #000;
 }
 
-.ft-carousel::-webkit-scrollbar {
+.ft-carousel-block::-webkit-scrollbar {
   block-size: 1rem;
 }
 
-.ft-carousel::-webkit-scrollbar-track {
+.ft-carousel-block::-webkit-scrollbar-track {
   background-color: #000;
 }
 
-.ft-carousel::-webkit-scrollbar-thumb {
+.ft-carousel-block::-webkit-scrollbar-thumb {
   background-color: #000;
   background-image: linear-gradient(
     #000 0,
@@ -25,20 +25,20 @@
   );
 }
 
-.ft-carousel > * {
+.ft-carousel-block > * {
   flex: 0 0 auto;
 }
 
-.ft-carousel > img {
+.ft-carousel-block > img {
   block-size: 100%;
   flex-basis: auto;
   width: auto;
 }
 
-.ft-carousel > * + * {
+.ft-carousel-block > * + * {
   margin-inline-start: 1rem;
 }
 
-.ft-carousel.overflowing {
+.ft-carousel-block.overflowing {
   padding-block-end: 1rem;
 }
