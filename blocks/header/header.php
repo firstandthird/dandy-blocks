@@ -16,7 +16,7 @@ if ( ! empty( $block['anchor'] ) ) {
 }
 
 // Create class attribute allowing for custom "className"
-$class_name = 'ft-header-block mb-4';
+$class_name = 'ft-header-block ft-blocks mb-4';
 if (!empty($block['className'])) {
   $class_name .= ' ' . $block['className'];
 }

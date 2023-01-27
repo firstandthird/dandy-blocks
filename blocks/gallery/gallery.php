@@ -15,7 +15,7 @@ if ( ! empty( $block['anchor'] ) ) {
 }
 
 // Create class attribute allowing for custom "className"
-$class_name = 'ft-gallery-block';
+$class_name = 'ft-gallery-block ft-blocks';
 if (!empty($block['className'])) {
   $class_name .= ' ' . $block['className'];
 }

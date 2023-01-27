@@ -30,7 +30,7 @@ if ( ! empty( $block['anchor'] ) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$class_name = 'ft-hero-block mb-4';
+$class_name = 'ft-hero-block ft-blocks mb-4';
 if ( ! empty( $block['className'] ) ) {
     $class_name .= ' ' . $block['className'];
 }
