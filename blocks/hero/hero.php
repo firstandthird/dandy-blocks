@@ -46,7 +46,7 @@ $has_any_button = ( $button_1 && $link_1 ) || ( $button_2 && $link_2 );
   <?= esc_attr($anchor); ?>
   class="<?= esc_attr($class_name); ?>"
 >
-  <div class="flex w-full items-center justify-center min-h-[30vh]" style="background-image: url(<?php echo esc_url( $bg_image ); ?>); background-position: <?php echo esc_attr( $bg_x . '% ' . $bg_y . '%' ); ?>;">
+  <div class="flex w-full items-center justify-center min-h-[50vh]" style="background-image: url(<?php echo esc_url( $bg_image ); ?>); background-position: <?php echo esc_attr( $bg_x . '% ' . $bg_y . '%' ); ?>;">
     <div class="w-full max-w-4xl p-5">
       <?php if ( $superheader ) : ?>
         <p class="text-sm leading-tight"><?php echo esc_html( $superheader ); ?></p>
