@@ -31,7 +31,7 @@
       $class_name .= ' align' . $block['align'];
   }
 
- $is_media_left = strpos( $className, 'is-style-media-left' ) !== false;
+ $is_media_left = strpos( $class_name, 'is-style-media-left' ) !== false;
  ?>
 
  <section
