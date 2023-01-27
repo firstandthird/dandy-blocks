@@ -15,10 +15,6 @@
   },
   "repositories": [
     {
-      "type": "vcs",
-      "url": "https://github.com/firstandthird/dandy"
-    },
-    {
       "type": "package",
       "package": {
         "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -35,9 +31,6 @@
       }
     }
   ],
-  "require": {
-    "firstandthird/ftdandy": "dev-main"
-  },
   "require-dev": {
     "automattic/vipwpcs": "^2.3",
     "phpcompatibility/php-compatibility": "^9.0",
