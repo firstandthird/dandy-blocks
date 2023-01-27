@@ -1,1 +1,3 @@
-console.log("modal script loaded");
+function () {
+  console.log("modal script loaded");
+}();
