@@ -67,12 +67,12 @@ $has_any_button = ( $button_1 && $link_1 ) || ( $button_2 && $link_2 );
       <?php if ( $has_any_button ) : ?>
         <div class="mt-4 flex flex-row gap-x-5 gap-y-2">
           <?php if ( $button_1 && $link_1 ) : ?>
-          <a class="bg-black text-white px-5 py-3 leading-none">
+          <a class="bg-black text-white px-5 py-3 leading-none" href="<?= esc_url( $link_1 ); ?>">
             <?php echo esc_html( $button_1 ); ?>
           </a>
           <?php endif; ?>
           <?php if ( $button_2 && $link_2 ) : ?>
-          <a class="bg-black text-white px-5 py-3 leading-none">
+          <a class="bg-black text-white px-5 py-3 leading-none" href="<?= esc_url( $link_2 ); ?>">
             <?php echo esc_html( $button_2 ); ?>
           </a>
           <?php endif; ?>
