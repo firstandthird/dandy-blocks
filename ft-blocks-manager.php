@@ -28,7 +28,8 @@ class FT_Blocks_Manager {
     add_action('init', ['FirstAndThird\FT_Blocks\FT_Blocks_Manager', 'register_blocks']);
     add_action('admin_init', ['FirstAndThird\FT_Blocks\FT_Blocks_Manager', 'register_editor_styles']);
     add_action('wp_enqueue_scripts', function() {
-      wp_enqueue_style('ft-blocks', plugin_dir_url(__FILE__) . 'dist/ft-blocks.css', array());
+      wp_enqueue_style('ft-blocks-styles', plugin_dir_url(__FILE__) . 'dist/ft-blocks.css', array());
+      wp_enqueue_script('ft-blocks-scripts', plugin_dir_url(__FILE__) . 'dist/ft-blocks.js', array());
     });
   }
 
