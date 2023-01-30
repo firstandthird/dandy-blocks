@@ -23,6 +23,37 @@
       "append": ""
     },
     {
+      "key": "field_63d80966fd850",
+      "label": "Number of Columns",
+      "name": "number_of_columns",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "auto-fit": "Autofit",
+        "1": "One",
+        "2": "Two",
+        "3": "Three",
+        "4": "Four"
+      },
+      "default_value": "auto-fit",
+      "return_format": "",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0,
+      "placeholder": "",
+      "allow_custom": 0,
+      "search_placeholder": ""
+    },
+    {
       "key": "field_63cef5771f306",
       "label": "Featured Items",
       "name": "featured_items",

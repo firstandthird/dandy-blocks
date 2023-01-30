@@ -5,6 +5,9 @@
 
 @supports (width: min(250px, 100%)) {
   .ft-features-block > div {
-    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    grid-template-columns: repeat(
+      var(--no-of-columns),
+      minmax(min(250px, 100%), 1fr)
+    );
   }
 }

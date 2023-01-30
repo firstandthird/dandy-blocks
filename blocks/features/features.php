@@ -12,6 +12,7 @@
 
  $section_title = get_field('section_title');
  $featured_items = get_field('featured_items');
+ $number_of_columns = get_field('number_of_columns');
 
 // Support custom "anchor" values.
 $anchor = '';
@@ -30,7 +31,11 @@ if ( ! empty( $block['align'] ) ) {
 }
 
 ?>
-
+<style>
+  .ft-features-block > div {
+    --no-of-columns: <?= esc_attr($number_of_columns); ?>;
+  }
+</style>
 <div
  <?= esc_attr($anchor); ?>
  class="<?= esc_attr($class_name); ?>"
@@ -41,7 +46,7 @@ if ( ! empty( $block['align'] ) ) {
   <?php if( have_rows('featured_items') ): ?>
     <div>
     <?php while( have_rows('featured_items') ): the_row(); ?>
-      <div class="flex justify-between items-center gap-2">
+      <div class="flex justify-between items-start gap-2">
         <?php
         $image = get_sub_field('image_or_icon');
         $title = get_sub_field('title');
@@ -50,7 +55,7 @@ if ( ! empty( $block['align'] ) ) {
         ?>
 
         <?php if (!empty($image)) { echo wp_get_attachment_image( $image, 'large', false, [
-          'class' => 'w-[33%]'
+          'class' => 'w-[10%]'
         ] ); } ?>
         <?php if (!empty($title) or !empty($content)): ?>
         <div>
