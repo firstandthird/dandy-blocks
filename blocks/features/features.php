@@ -1,6 +1,6 @@
 <?php
 /**
- * F+T Carousel Block
+ * F+T Features Block
  *
  * @param   array $block The block settings and attributes.
  * @param   string $content The block inner HTML (empty).
@@ -36,7 +36,7 @@ if ( ! empty( $block['align'] ) ) {
     --no-of-columns: <?= esc_attr($number_of_columns); ?>;
   }
 </style>
-<div
+<section
  <?= esc_attr($anchor); ?>
  class="<?= esc_attr($class_name); ?>"
 >
@@ -74,4 +74,4 @@ if ( ! empty( $block['align'] ) ) {
     <?php endwhile; ?>
     </div>
   <?php endif; ?>
-</div>
+</section>

@@ -2,36 +2,31 @@
   "name": "ft-blocks-manager",
   "version": "1.0.0",
   "description": "A collection of Gutenberg blocks built on ACF.",
-  "main": "tailwind.config.js",
-  "scripts": {
-    "build": "npm run build:css && npm run build:js",
-    "build:css": "tailwindcss -i ./src/ft-blocks.css -o ./dist/ft-blocks.css --minify && tailwindcss -i ./src/editor-style.css -o ./dist/editor-style.css --minify",
-    "build:js": "esbuild ./src/ft-blocks.js --bundle --minify --outfile=./dist/ft-blocks.js",
-    "dev": "tailwindcss -i ./src/ft-blocks.css -o ./dist/ft-blocks.css --watch"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/firstandthird/ft-blocks.git"
-  },
   "keywords": [
     "wordpress",
     "firstandthird",
     "module",
     "plugin"
   ],
-  "author": "First+Third",
-  "license": "ISC",
+  "homepage": "https://github.com/firstandthird/ft-blocks#readme",
   "bugs": {
     "url": "https://github.com/firstandthird/ft-blocks/issues"
   },
-  "homepage": "https://github.com/firstandthird/ft-blocks#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firstandthird/ft-blocks.git"
+  },
+  "license": "ISC",
+  "author": "First+Third",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/ft-blocks.css -o ./dist/ft-blocks.css --minify && tailwindcss -i ./src/editor-style.css -o ./dist/editor-style.css --minify",
+    "dev": "tailwindcss -i ./src/ft-blocks.css -o ./dist/ft-blocks.css --watch"
+  },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/line-clamp": "^0.4.2",
+    "esbuild": "^0.17.5",
     "tailwindcss": "^3.2.4"
-  },
-  "dependencies": {
-    "@glidejs/glide": "^3.6.0",
-    "esbuild": "0.17.5"
   }
 }
