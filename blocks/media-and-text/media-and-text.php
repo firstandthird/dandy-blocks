@@ -60,11 +60,9 @@
      <div class="mb-5 xl:w-1/2 lg:mb-0 lg:w-2/5 lg:flex lg:items-center<?php if ( $is_media_left ): ?> lg:-order-1<?php endif; ?>">
        <?php if ( ! empty ( $image ) ): ?>
        <div class="media-text-image">
-         <div class="<?php if ( $is_media_left ): ?>-ml-5 !rounded-l-none<?php else: ?>-mr-5 !rounded-r-none<?php endif; ?> lg:mx-0 lg:!rounded-xl">
-           <?= wp_get_attachment_image( $image, 'large', false, array(
-             'class' => 'aspect-[3/2] object-cover object-center w-full h-auto'
-           ) ); ?>
-         </div>
+          <?= wp_get_attachment_image( $image, 'large', false, array(
+            'class' => 'aspect-[3/2] object-cover object-center w-full h-auto'
+          ) ); ?>
        </div>
        <?php endif; ?>
      </div>

@@ -46,7 +46,7 @@ if ( ! empty( $block['align'] ) ) {
   <?php if( have_rows('featured_items') ): ?>
     <div>
     <?php while( have_rows('featured_items') ): the_row(); ?>
-      <div class="flex justify-between items-start gap-2">
+      <div class="flex justify-between items-start gap-4">
         <?php
         $image = get_sub_field('image_or_icon');
         $title = get_sub_field('title');
